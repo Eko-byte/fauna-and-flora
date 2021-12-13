@@ -2,12 +2,12 @@
   "format_version": "1.16.100",
   "minecraft:item": {
     "description": {
-      "identifier": "ff:pink_bleeding_heart_boquet_item",
+      "identifier": "ff:pink_bleeding_heart_bouquet_item",
       "category": "nature"
     },
     "components": {
       "minecraft:block_placer": {
-        "block": "ff:pink_bleeding_heart_boquet",
+        "block": "ff:pink_bleeding_heart_bouquet",
         "use_on": [
           "grass",
           "dirt",
@@ -17,7 +17,7 @@
         ]
       },
       "minecraft:icon": {
-        "texture": "pink_bleeding_heart_boquet"
+        "texture": "pink_bleeding_heart_bouquet"
       },
       "minecraft:creative_category": {
         "parent": "itemGroup.name.flower"

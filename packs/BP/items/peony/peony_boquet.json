@@ -2,12 +2,12 @@
   "format_version": "1.16.100",
   "minecraft:item": {
     "description": {
-      "identifier": "ff:peony_boquet_item",
+      "identifier": "ff:peony_bouquet_item",
       "category": "nature"
     },
     "components": {
       "minecraft:block_placer": {
-        "block": "ff:peony_boquet",
+        "block": "ff:peony_bouquet",
         "use_on": [
           "grass",
           "dirt",
@@ -17,7 +17,7 @@
         ]
       },
       "minecraft:icon": {
-        "texture": "peony_boquet"
+        "texture": "peony_bouquet"
       },
       "minecraft:creative_category": {
         "parent": "itemGroup.name.flower"

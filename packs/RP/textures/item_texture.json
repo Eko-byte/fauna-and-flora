@@ -468,170 +468,170 @@
     "petunia_short": {
       "textures": "textures/blocks/petunia/petunia_short"
     },
-    "allium_boquet": {
-      "textures": "textures/items/allium/allium_boquet"
+    "allium_bouquet": {
+      "textures": "textures/items/allium/allium_bouquet"
     },
-    "anemone_boquet": {
-      "textures": "textures/items/anemone/anemone_boquet"
+    "anemone_bouquet": {
+      "textures": "textures/items/anemone/anemone_bouquet"
     },
-    "angels_trumpet_boquet": {
-      "textures": "textures/items/angels_trumpet/angels_trumpet_boquet"
+    "angels_trumpet_bouquet": {
+      "textures": "textures/items/angels_trumpet/angels_trumpet_bouquet"
     },
-    "azalea_boquet": {
-      "textures": "textures/items/azalea/azalea_boquet"
+    "azalea_bouquet": {
+      "textures": "textures/items/azalea/azalea_bouquet"
     },
-    "azure_bluet_boquet": {
-      "textures": "textures/items/azure_bluet/azure_bluet_boquet"
+    "azure_bluet_bouquet": {
+      "textures": "textures/items/azure_bluet/azure_bluet_bouquet"
     },
-    "black_bleeding_heart_boquet": {
-      "textures": "textures/items/black_bleeding_heart/black_bleeding_heart_boquet"
+    "black_bleeding_heart_bouquet": {
+      "textures": "textures/items/black_bleeding_heart/black_bleeding_heart_bouquet"
     },
-    "bluebell_boquet": {
-      "textures": "textures/items/bluebell/bluebell_boquet"
+    "bluebell_bouquet": {
+      "textures": "textures/items/bluebell/bluebell_bouquet"
     },
-    "blue_bleeding_heart_boquet": {
-      "textures": "textures/items/blue_bleeding_heart/blue_bleeding_heart_boquet"
+    "blue_bleeding_heart_bouquet": {
+      "textures": "textures/items/blue_bleeding_heart/blue_bleeding_heart_bouquet"
     },
-    "blue_dragon_rose_boquet": {
-      "textures": "textures/items/blue_dragon_rose/blue_dragon_rose_boquet"
+    "blue_dragon_rose_bouquet": {
+      "textures": "textures/items/blue_dragon_rose/blue_dragon_rose_bouquet"
     },
-    "blue_orchid_boquet": {
-      "textures": "textures/items/blue_orchid/blue_orchid_boquet"
+    "blue_orchid_bouquet": {
+      "textures": "textures/items/blue_orchid/blue_orchid_bouquet"
     },
-    "blue_tulip_boquet": {
-      "textures": "textures/items/blue_tulip/blue_tulip_boquet"
+    "blue_tulip_bouquet": {
+      "textures": "textures/items/blue_tulip/blue_tulip_bouquet"
     },
-    "buttercup_boquet": {
-      "textures": "textures/items/buttercup/buttercup_boquet"
+    "buttercup_bouquet": {
+      "textures": "textures/items/buttercup/buttercup_bouquet"
     },
-    "carnation_boquet": {
-      "textures": "textures/items/carnation/carnation_boquet"
+    "carnation_bouquet": {
+      "textures": "textures/items/carnation/carnation_bouquet"
     },
-    "chocolate_cosmos_boquet": {
-      "textures": "textures/items/chocolate_cosmos/chocolate_cosmos_boquet"
+    "chocolate_cosmos_bouquet": {
+      "textures": "textures/items/chocolate_cosmos/chocolate_cosmos_bouquet"
     },
-    "cornflower_boquet": {
-      "textures": "textures/items/cornflower/cornflower_boquet"
+    "cornflower_bouquet": {
+      "textures": "textures/items/cornflower/cornflower_bouquet"
     },
-    "corrupted_bluebell_boquet": {
-      "textures": "textures/items/corrupted_bluebell/corrupted_bluebell_boquet"
+    "corrupted_bluebell_bouquet": {
+      "textures": "textures/items/corrupted_bluebell/corrupted_bluebell_bouquet"
     },
-    "corrupted_rose_boquet": {
-      "textures": "textures/items/corrupted_rose/corrupted_rose_boquet"
+    "corrupted_rose_bouquet": {
+      "textures": "textures/items/corrupted_rose/corrupted_rose_bouquet"
     },
-    "cyan_rose_boquet": {
-      "textures": "textures/items/cyan_rose/cyan_rose_boquet"
+    "cyan_rose_bouquet": {
+      "textures": "textures/items/cyan_rose/cyan_rose_bouquet"
     },
-    "daffodil_boquet": {
-      "textures": "textures/items/daffodil/daffodil_boquet"
+    "daffodil_bouquet": {
+      "textures": "textures/items/daffodil/daffodil_bouquet"
     },
-    "dandelion_boquet": {
-      "textures": "textures/items/dandelion/dandelion_boquet"
+    "dandelion_bouquet": {
+      "textures": "textures/items/dandelion/dandelion_bouquet"
     },
-    "foxglove_boquet": {
-      "textures": "textures/items/foxglove/foxglove_boquet"
+    "foxglove_bouquet": {
+      "textures": "textures/items/foxglove/foxglove_bouquet"
     },
-    "gardenia_boquet": {
-      "textures": "textures/items/gardenia/gardenia_boquet"
+    "gardenia_bouquet": {
+      "textures": "textures/items/gardenia/gardenia_bouquet"
     },
-    "gold_rose_boquet": {
-      "textures": "textures/items/gold_rose/gold_rose_boquet"
+    "gold_rose_bouquet": {
+      "textures": "textures/items/gold_rose/gold_rose_bouquet"
     },
-    "green_tulip_boquet": {
-      "textures": "textures/items/green_tulip/green_tulip_boquet"
+    "green_tulip_bouquet": {
+      "textures": "textures/items/green_tulip/green_tulip_bouquet"
     },
-    "grieving_lavender_boquet": {
-      "textures": "textures/items/grieving_lavender/grieving_lavender_boquet"
+    "grieving_lavender_bouquet": {
+      "textures": "textures/items/grieving_lavender/grieving_lavender_bouquet"
     },
-    "grieving_rose_boquet": {
-      "textures": "textures/items/grieving_rose/grieving_rose_boquet"
+    "grieving_rose_bouquet": {
+      "textures": "textures/items/grieving_rose/grieving_rose_bouquet"
     },
-    "hemlock_boquet": {
-      "textures": "textures/items/hemlock/hemlock_boquet"
+    "hemlock_bouquet": {
+      "textures": "textures/items/hemlock/hemlock_bouquet"
     },
-    "hibiscus_boquet": {
-      "textures": "textures/items/hibiscus/hibiscus_boquet"
+    "hibiscus_bouquet": {
+      "textures": "textures/items/hibiscus/hibiscus_bouquet"
     },
-    "lavender_boquet": {
-      "textures": "textures/items/lavender/lavender_boquet"
+    "lavender_bouquet": {
+      "textures": "textures/items/lavender/lavender_bouquet"
     },
-    "lilac_boquet": {
-      "textures": "textures/items/lilac/lilac_boquet"
+    "lilac_bouquet": {
+      "textures": "textures/items/lilac/lilac_bouquet"
     },
-    "lily_valley_boquet": {
-      "textures": "textures/items/lily_valley/lily_valley_boquet"
+    "lily_valley_bouquet": {
+      "textures": "textures/items/lily_valley/lily_valley_bouquet"
     },
-    "marigold_boquet": {
-      "textures": "textures/items/marigold/marigold_boquet"
+    "marigold_bouquet": {
+      "textures": "textures/items/marigold/marigold_bouquet"
     },
-    "orange_tulip_boquet": {
-      "textures": "textures/items/orange_tulip/orange_tulip_boquet"
+    "orange_tulip_bouquet": {
+      "textures": "textures/items/orange_tulip/orange_tulip_bouquet"
     },
-    "oxeye_daisy_boquet": {
-      "textures": "textures/items/oxeye_daisy/oxeye_daisy_boquet"
+    "oxeye_daisy_bouquet": {
+      "textures": "textures/items/oxeye_daisy/oxeye_daisy_bouquet"
     },
-    "peony_boquet": {
-      "textures": "textures/items/peony/peony_boquet"
+    "peony_bouquet": {
+      "textures": "textures/items/peony/peony_bouquet"
     },
-    "periwinkle_boquet": {
-      "textures": "textures/items/periwinkle/periwinkle_boquet"
+    "periwinkle_bouquet": {
+      "textures": "textures/items/periwinkle/periwinkle_bouquet"
     },
-    "petunia_boquet": {
-      "textures": "textures/items/petunia/petunia_boquet"
+    "petunia_bouquet": {
+      "textures": "textures/items/petunia/petunia_bouquet"
     },
-    "pink_bleeding_heart_boquet": {
-      "textures": "textures/items/pink_bleeding_heart/pink_bleeding_heart_boquet"
+    "pink_bleeding_heart_bouquet": {
+      "textures": "textures/items/pink_bleeding_heart/pink_bleeding_heart_bouquet"
     },
-    "pink_rose_boquet": {
-      "textures": "textures/items/pink_rose/pink_rose_boquet"
+    "pink_rose_bouquet": {
+      "textures": "textures/items/pink_rose/pink_rose_bouquet"
     },
-    "pink_tulip_boquet": {
-      "textures": "textures/items/pink_tulip/pink_tulip_boquet"
+    "pink_tulip_bouquet": {
+      "textures": "textures/items/pink_tulip/pink_tulip_bouquet"
     },
-    "poppy_boquet": {
-      "textures": "textures/items/poppy/poppy_boquet"
+    "poppy_bouquet": {
+      "textures": "textures/items/poppy/poppy_bouquet"
     },
-    "purple_orchid_boquet": {
-      "textures": "textures/items/purple_orchid/purple_orchid_boquet"
+    "purple_orchid_bouquet": {
+      "textures": "textures/items/purple_orchid/purple_orchid_bouquet"
     },
-    "purple_tulip_boquet": {
-      "textures": "textures/items/purple_tulip/purple_tulip_boquet"
+    "purple_tulip_bouquet": {
+      "textures": "textures/items/purple_tulip/purple_tulip_bouquet"
     },
-    "queen_tulip_boquet": {
-      "textures": "textures/items/queen_tulip/queen_tulip_boquet"
+    "queen_tulip_bouquet": {
+      "textures": "textures/items/queen_tulip/queen_tulip_bouquet"
     },
-    "red_tulip_boquet": {
-      "textures": "textures/items/red_tulip/red_tulip_boquet"
+    "red_tulip_bouquet": {
+      "textures": "textures/items/red_tulip/red_tulip_bouquet"
     },
-    "rose_boquet": {
-      "textures": "textures/items/rose/rose_boquet"
+    "rose_bouquet": {
+      "textures": "textures/items/rose/rose_bouquet"
     },
-    "snapdragon_boquet": {
-      "textures": "textures/items/snapdragon/snapdragon_boquet"
+    "snapdragon_bouquet": {
+      "textures": "textures/items/snapdragon/snapdragon_bouquet"
     },
-    "sunflower_boquet": {
-      "textures": "textures/items/sunflower/sunflower_boquet"
+    "sunflower_bouquet": {
+      "textures": "textures/items/sunflower/sunflower_bouquet"
     },
-    "tiger_lily_boquet": {
-      "textures": "textures/items/tiger_lily/tiger_lily_boquet"
+    "tiger_lily_bouquet": {
+      "textures": "textures/items/tiger_lily/tiger_lily_bouquet"
     },
-    "white_bleeding_heart_boquet": {
-      "textures": "textures/items/white_bleeding_heart/white_bleeding_heart_boquet"
+    "white_bleeding_heart_bouquet": {
+      "textures": "textures/items/white_bleeding_heart/white_bleeding_heart_bouquet"
     },
-    "white_rose_boquet": {
-      "textures": "textures/items/white_rose/white_rose_boquet"
+    "white_rose_bouquet": {
+      "textures": "textures/items/white_rose/white_rose_bouquet"
     },
-    "white_tulip_boquet": {
-      "textures": "textures/items/white_tulip/white_tulip_boquet"
+    "white_tulip_bouquet": {
+      "textures": "textures/items/white_tulip/white_tulip_bouquet"
     },
-    "wither_rose_boquet": {
-      "textures": "textures/items/wither_rose/wither_rose_boquet"
+    "wither_rose_bouquet": {
+      "textures": "textures/items/wither_rose/wither_rose_bouquet"
     },
-    "wolfsbane_boquet": {
-      "textures": "textures/items/wolfsbane/wolfsbane_boquet"
+    "wolfsbane_bouquet": {
+      "textures": "textures/items/wolfsbane/wolfsbane_bouquet"
     },
-    "yellow_tulip_boquet": {
-      "textures": "textures/items/yellow_tulip/yellow_tulip_boquet"
+    "yellow_tulip_bouquet": {
+      "textures": "textures/items/yellow_tulip/yellow_tulip_bouquet"
     }
   }
 }

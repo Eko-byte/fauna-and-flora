@@ -2,7 +2,7 @@
   "format_version": 1.12,
   "minecraft:recipe_shapeless": {
     "description": {
-      "identifier": "ff:hibiscus_into_hibiscus_boquet"
+      "identifier": "ff:hibiscus_into_hibiscus_bouquet"
     },
     "tags": [
       "crafting_table"
@@ -14,7 +14,7 @@
       }
     ],
     "result": {
-      "item": "ff:hibiscus_boquet_item",
+      "item": "ff:hibiscus_bouquet_item",
       "count": 1
     }
   }

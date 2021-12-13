@@ -2,14 +2,14 @@
   "format_version": 1.12,
   "minecraft:recipe_shapeless": {
     "description": {
-      "identifier": "ff:daffodil_boquet_into_daffodil"
+      "identifier": "ff:daffodil_bouquet_into_daffodil"
     },
     "tags": [
       "crafting_table"
     ],
     "ingredients": [
       {
-        "item": "ff:daffodil_boquet_item",
+        "item": "ff:daffodil_bouquet_item",
         "count": 1
       }
     ],

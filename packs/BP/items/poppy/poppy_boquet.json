@@ -2,12 +2,12 @@
   "format_version": "1.16.100",
   "minecraft:item": {
     "description": {
-      "identifier": "ff:poppy_boquet_item",
+      "identifier": "ff:poppy_bouquet_item",
       "category": "nature"
     },
     "components": {
       "minecraft:block_placer": {
-        "block": "ff:poppy_boquet",
+        "block": "ff:poppy_bouquet",
         "use_on": [
           "grass",
           "dirt",
@@ -17,7 +17,7 @@
         ]
       },
       "minecraft:icon": {
-        "texture": "poppy_boquet"
+        "texture": "poppy_bouquet"
       },
       "minecraft:creative_category": {
         "parent": "itemGroup.name.flower"

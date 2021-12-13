@@ -2,12 +2,12 @@
   "format_version": "1.16.100",
   "minecraft:item": {
     "description": {
-      "identifier": "ff:lavender_boquet_item",
+      "identifier": "ff:lavender_bouquet_item",
       "category": "nature"
     },
     "components": {
       "minecraft:block_placer": {
-        "block": "ff:lavender_boquet",
+        "block": "ff:lavender_bouquet",
         "use_on": [
           "grass",
           "dirt",
@@ -17,7 +17,7 @@
         ]
       },
       "minecraft:icon": {
-        "texture": "lavender_boquet"
+        "texture": "lavender_bouquet"
       },
       "minecraft:creative_category": {
         "parent": "itemGroup.name.flower"

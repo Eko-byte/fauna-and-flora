@@ -2,12 +2,12 @@
   "format_version": "1.16.100",
   "minecraft:item": {
     "description": {
-      "identifier": "ff:snapdragon_boquet_item",
+      "identifier": "ff:snapdragon_bouquet_item",
       "category": "nature"
     },
     "components": {
       "minecraft:block_placer": {
-        "block": "ff:snapdragon_boquet",
+        "block": "ff:snapdragon_bouquet",
         "use_on": [
           "grass",
           "dirt",
@@ -17,7 +17,7 @@
         ]
       },
       "minecraft:icon": {
-        "texture": "snapdragon_boquet"
+        "texture": "snapdragon_bouquet"
       },
       "minecraft:creative_category": {
         "parent": "itemGroup.name.flower"

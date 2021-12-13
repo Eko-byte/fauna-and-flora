@@ -2,7 +2,7 @@
   "format_version": 1.12,
   "minecraft:recipe_shapeless": {
     "description": {
-      "identifier": "ff:lavender_into_lavender_boquet"
+      "identifier": "ff:lavender_into_lavender_bouquet"
     },
     "tags": [
       "crafting_table"
@@ -14,7 +14,7 @@
       }
     ],
     "result": {
-      "item": "ff:lavender_boquet_item",
+      "item": "ff:lavender_bouquet_item",
       "count": 1
     }
   }

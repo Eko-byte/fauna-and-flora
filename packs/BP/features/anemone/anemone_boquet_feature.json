@@ -2,10 +2,10 @@
   "format_version": "1.13.0",
   "minecraft:single_block_feature": {
     "description": {
-      "identifier": "ff:anemone/anemone_boquet_feature"
+      "identifier": "ff:anemone/anemone_bouquet_feature"
     },
     "places_block": {
-      "name": "ff:anemone_boquet"
+      "name": "ff:anemone_bouquet"
     },
     "enforce_survivability_rules": true,
     "enforce_placement_rules": true

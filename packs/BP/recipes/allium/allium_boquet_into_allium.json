@@ -2,14 +2,14 @@
   "format_version": 1.12,
   "minecraft:recipe_shapeless": {
     "description": {
-      "identifier": "ff:allium_boquet_into_allium"
+      "identifier": "ff:allium_bouquet_into_allium"
     },
     "tags": [
       "crafting_table"
     ],
     "ingredients": [
       {
-        "item": "ff:allium_boquet_item",
+        "item": "ff:allium_bouquet_item",
         "count": 1
       }
     ],

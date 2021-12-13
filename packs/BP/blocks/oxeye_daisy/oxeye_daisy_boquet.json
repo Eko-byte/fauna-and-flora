@@ -2,7 +2,7 @@
   "format_version": "1.16.100",
   "minecraft:block": {
     "description": {
-      "identifier": "ff:oxeye_daisy_boquet"
+      "identifier": "ff:oxeye_daisy_bouquet"
     },
     "components": {
       "minecraft:placement_filter": {
@@ -20,12 +20,12 @@
           }
         ]
       },
-      "minecraft:loot": "loot_tables/blocks/oxeye_daisy_boquet.json",
+      "minecraft:loot": "loot_tables/blocks/oxeye_daisy_bouquet.json",
       "minecraft:geometry": "geometry.large_fern",
       "minecraft:material_instances": {
         "*": {
           "render_method": "alpha_test",
-          "texture": "oxeye_daisy_boquet",
+          "texture": "oxeye_daisy_bouquet",
           "face_dimming": false,
           "ambient_occlusion": false
         }
@@ -43,7 +43,7 @@
     "events": {
       "fertilize_block": {
         "spawn_loot": {
-          "table": "loot_tables/blocks/oxeye_daisy_boquet.json"
+          "table": "loot_tables/blocks/oxeye_daisy_bouquet.json"
         },
         "decrement_stack": {},
         "run_command": {

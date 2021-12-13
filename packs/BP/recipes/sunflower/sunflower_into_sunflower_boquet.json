@@ -2,7 +2,7 @@
   "format_version": 1.12,
   "minecraft:recipe_shapeless": {
     "description": {
-      "identifier": "ff:sunflower_into_sunflower_boquet"
+      "identifier": "ff:sunflower_into_sunflower_bouquet"
     },
     "tags": [
       "crafting_table"
@@ -14,7 +14,7 @@
       }
     ],
     "result": {
-      "item": "ff:sunflower_boquet_item",
+      "item": "ff:sunflower_bouquet_item",
       "count": 1
     }
   }

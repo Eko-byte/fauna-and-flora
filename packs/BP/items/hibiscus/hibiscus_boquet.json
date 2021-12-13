@@ -2,12 +2,12 @@
   "format_version": "1.16.100",
   "minecraft:item": {
     "description": {
-      "identifier": "ff:hibiscus_boquet_item",
+      "identifier": "ff:hibiscus_bouquet_item",
       "category": "nature"
     },
     "components": {
       "minecraft:block_placer": {
-        "block": "ff:hibiscus_boquet",
+        "block": "ff:hibiscus_bouquet",
         "use_on": [
           "grass",
           "dirt",
@@ -17,7 +17,7 @@
         ]
       },
       "minecraft:icon": {
-        "texture": "hibiscus_boquet"
+        "texture": "hibiscus_bouquet"
       },
       "minecraft:creative_category": {
         "parent": "itemGroup.name.flower"

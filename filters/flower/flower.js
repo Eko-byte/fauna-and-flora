@@ -1,12 +1,17 @@
-const fs = require('fs');
+const fs = require("fs");
 const glob = require("glob");
 
 glob("./data/flowerFauna/**/*.json", (err, filePath) => {
   filePath.forEach((v) => {
-    let tempData = JSON.parse(fs.readFileSync(v).toString())
-    name(tempData.identifier, tempData.dye, tempData.tier, tempData.langName)
+    let tempData = JSON.parse(fs.readFileSync(v).toString());
+    name(tempData.identifier, tempData.dye, tempData.tier, tempData.langName);
   });
 });
+function makeDir(path) {
+  try {
+    fs.mkdirSync(path, { recursive: true });
+  } catch {}
+}
 function name(identifier, dye, tier, langName) {
   let blocksData = JSON.parse(fs.readFileSync("RP/blocks.json").toString());
   let textureData = JSON.parse(
@@ -17,13 +22,185 @@ function name(identifier, dye, tier, langName) {
   );
   let langData = fs.readFileSync("RP/texts/en_US.lang").toString();
 
+  makeDir(`BP/blocks/${identifier}`);
+  makeDir(`BP/recipes/${identifier}`);
+  makeDir(`BP/loot_tables/blocks/${identifier}`);
+  makeDir(`BP/items/${identifier}`);
+  makeDir(`BP/features/${identifier}`);
+  makeDir(`RP/textures/blocks/${identifier}`);
+  makeDir(`RP/textures/items/${identifier}`);
+
+  var identifierBouquet = identifier + "_bouquet";
+  var ffIdentifierBouquet = "ff:" + identifier + "_bouquet";
+  let bouquetBlockData = {
+    format_version: "1.16.100",
+    "minecraft:block": {
+      description: {
+        identifier: `ff:${identifier}_bouquet`,
+      },
+      components: {
+        "minecraft:placement_filter": {
+          conditions: [
+            {
+              allowed_faces: ["up"],
+              block_filter: [
+                "minecraft:grass",
+                "minecraft:dirt",
+                "minecraft:podzol",
+                "minecraft:moss_block",
+              ],
+            },
+          ],
+        },
+        "minecraft:loot": `loot_tables/blocks/${identifier}_bouquet.json`,
+        "minecraft:geometry": "geometry.large_fern",
+        "minecraft:material_instances": {
+          "*": {
+            render_method: "alpha_test",
+            texture: `${identifier}_bouquet`,
+            face_dimming: false,
+            ambient_occlusion: false,
+          },
+        },
+        "minecraft:entity_collision": false,
+        "minecraft:block_light_absorption": 0,
+        "minecraft:destroy_time": 0,
+        "minecraft:breathability": "air",
+        "minecraft:breakonpush": true,
+        "minecraft:on_interact": {
+          condition: "q.get_equipped_item_name=='bone_meal'",
+          event: "fertilize_block",
+        },
+      },
+      events: {
+        fertilize_block: {
+          spawn_loot: {
+            table: `loot_tables/blocks/${identifier}_bouquet.json`,
+          },
+          decrement_stack: {},
+          run_command: {
+            command: ["particle minecraft:crop_growth_emitter ~ ~ ~"],
+          },
+        },
+      },
+    },
+  };
+  let bouquetItemData = {
+    format_version: "1.16.100",
+    "minecraft:item": {
+      description: {
+        identifier: `ff:${identifier}_bouquet_item`,
+        category: "nature",
+      },
+      components: {
+        "minecraft:block_placer": {
+          block: `ff:${identifier}_bouquet`,
+          use_on: ["grass", "dirt", "podzol", "moss_block", "dirt_with_roots"],
+        },
+        "minecraft:icon": { texture: `${identifier}_bouquet` },
+        "minecraft:creative_category": { parent: "itemGroup.name.flower" },
+        "tag:flower": {},
+        "minecraft:max_stack_size": 64,
+        "minecraft:stacked_by_data": true,
+        "minecraft:on_use_on": { on_use_on: { event: "sound" } },
+      },
+      events: {
+        sound: {
+          run_command: {
+            command: ["playsound dig.grass @a[r=5] ~ ~ ~ 0.4 1.0"],
+          },
+        },
+      },
+    },
+  };
+  let bouquetFeatureData = {
+    format_version: "1.13.0",
+    "minecraft:single_block_feature": {
+      description: {
+        identifier: `ff:${identifier}/${identifier}_bouquet_feature`,
+      },
+      places_block: { name: `ff:${identifier}_bouquet` },
+      enforce_survivability_rules: true,
+      enforce_placement_rules: true,
+    },
+  };
+  let bouquetLootData = {
+    pools: [
+      {
+        rolls: 1,
+        entries: [
+          {
+            type: "item",
+            name: `ff:${identifier}_large_item`,
+            weight: 1,
+            functions: [{ function: "set_count", count: { min: 1, max: 1 } }],
+          },
+        ],
+      },
+    ],
+  };
+  let bouquetRecipeData = {
+    format_version: 1.12,
+    "minecraft:recipe_shapeless": {
+      description: {
+        identifier: `ff:${identifier}_into_${identifier}_bouquet`,
+      },
+      tags: ["crafting_table"],
+      ingredients: [{ item: `ff:${identifier}_item`, count: 9 }],
+      result: { item: `ff:${identifier}_bouquet_item`, count: 1 },
+    },
+  };
+  let bouquetRecipeData2 = {
+    format_version: 1.12,
+    "minecraft:recipe_shapeless": {
+      description: {
+        identifier: `ff:${identifier}_bouquet_into_${identifier}`,
+      },
+      tags: ["crafting_table"],
+      ingredients: [{ item: `ff:${identifier}_bouquet_item`, count: 1 }],
+      result: { item: `ff:${identifier}_item`, count: 9 },
+    },
+  };
+  fs.writeFileSync(
+    `BP/recipes/${identifier}/${identifier}_into_${identifier}_bouquet.json`,
+    JSON.stringify(bouquetRecipeData, null, "  ")
+  );
+  fs.writeFileSync(
+    `BP/recipes/${identifier}/${identifier}_bouquet_into_${identifier}.json`,
+    JSON.stringify(bouquetRecipeData2, null, "  ")
+  );
+  fs.writeFileSync(
+    `BP/blocks/${identifier}/${identifier}_bouquet.json`,
+    JSON.stringify(bouquetBlockData, null, "  ")
+  );
+  fs.writeFileSync(
+    `BP/items/${identifier}/${identifier}_bouquet.json`,
+    JSON.stringify(bouquetItemData, null, "  ")
+  );
+  fs.writeFileSync(
+    `BP/features/${identifier}/${identifier}_bouquet_feature.json`,
+    JSON.stringify(bouquetFeatureData, null, "  ")
+  );
+  fs.writeFileSync(
+    `BP/loot_tables/blocks/${identifier}/${identifier}_bouquet.json`,
+    JSON.stringify(bouquetLootData, null, "  ")
+  );
+  langData += `\nitem.ff:${identifier}_bouquet_item=${langName} Bouquet`;
+  blocksData[ffIdentifierBouquet] = { sound: "grass" };
+  textureData.texture_data[identifierBouquet] = {
+    textures: `textures/blocks/${identifier}/${identifierBouquet}`,
+  };
+  itemTextureData.texture_data[identifierBouquet] = {
+    textures: `textures/items/${identifier}/${identifierBouquet}`,
+  };
+
   switch (tier) {
-    case 1: {
-      var blockData1 = {
+    case 4: {
+      var blockData4 = {
         format_version: "1.16.100",
         "minecraft:block": {
           description: {
-            identifier: `ff:${identifier}`,
+            identifier: `ff:${identifier}_short`,
           },
           components: {
             "minecraft:placement_filter": {
@@ -40,12 +217,12 @@ function name(identifier, dye, tier, langName) {
                 },
               ],
             },
-            "minecraft:loot": `loot_tables/blocks/${identifier}/${identifier}.json`,
+            "minecraft:loot": `loot_tables/blocks/${identifier}/${identifier}_short.json`,
             "minecraft:geometry": "geometry.cross",
             "minecraft:material_instances": {
               "*": {
                 render_method: "alpha_test",
-                texture: `${identifier}`,
+                texture: `${identifier}_short`,
                 face_dimming: false,
                 ambient_occlusion: false,
               },
@@ -64,35 +241,210 @@ function name(identifier, dye, tier, langName) {
           events: {},
         },
       };
-      var recipeData = {
+      var shortIntoNormal = {
         format_version: 1.12,
         "minecraft:recipe_shapeless": {
           description: {
-            identifier: `ff:dye_from_${identifier}`,
+            identifier: `ff:short_${identifier}_into_normal_${identifier}`,
+          },
+          tags: ["crafting_table"],
+          ingredients: [
+            {
+              item: `ff:${identifier}_short_item`,
+            },
+          ],
+          result: {
+            item: `ff:${identifier}_item`,
+            count: 2,
+          },
+        },
+      };
+      var normalIntoShort = {
+        format_version: 1.12,
+        "minecraft:recipe_shapeless": {
+          description: {
+            identifier: `ff:normal_${identifier}_into_short_${identifier}`,
           },
           tags: ["crafting_table"],
           ingredients: [
             {
               item: `ff:${identifier}_item`,
+              count: 2,
             },
           ],
           result: {
-            item: "minecraft:dye",
-            data: dye,
+            item: `ff:${identifier}_short_item`,
           },
         },
       };
-      var langData1 = `item.ff:${identifier}_item=${identifierName}`;
+      var tallIntoShort = {
+        format_version: 1.12,
+        "minecraft:recipe_shapeless": {
+          description: {
+            identifier: `ff:tall_${identifier}_into_short_${identifier}`,
+          },
+          tags: ["crafting_table"],
+          ingredients: [
+            {
+              item: `ff:${identifier}_tall_item`,
+            },
+          ],
+          result: {
+            item: `ff:${identifier}_short_item`,
+            count: 2,
+          },
+        },
+      };
+      var shortIntoTall = {
+        format_version: 1.12,
+        "minecraft:recipe_shapeless": {
+          description: {
+            identifier: `ff:short_${identifier}_into_tall_${identifier}`,
+          },
+          tags: ["crafting_table"],
+          ingredients: [
+            {
+              item: `ff:${identifier}_short_item`,
+              count: 2,
+            },
+          ],
+          result: {
+            item: `ff:${identifier}_tall_item`,
+          },
+        },
+      };
 
-      fs.writeFile(
-        `BP/blocks/${identifier}/${identifier}.json`,
-        JSON.stringify(blockData1)
+      fs.writeFileSync(
+        `BP/blocks/${identifier}/${identifier}_short.json`,
+        JSON.stringify(blockData4)
       );
-      fs.writeFile(
-        `BP/recipes/${identifier}/${identifier}_dye.json`,
-        JSON.stringify(recipeData)
+      fs.writeFileSync(
+        `BP/recipes/${identifier}/tall_into_short.json`,
+        JSON.stringify(tallIntoShort)
       );
-      fs.writeFile(`RP/texts/en_US.lang`, langData1);
+      fs.writeFileSync(
+        `BP/recipes/${identifier}/short_into_tall.json`,
+        JSON.stringify(shortIntoTall)
+      );
+      fs.writeFileSync(
+        `BP/recipes/${identifier}/short_into_normal.json`,
+        JSON.stringify(shortIntoNormal)
+      );
+      fs.writeFileSync(
+        `BP/recipes/${identifier}/normal_into_short.json`,
+        JSON.stringify(normalIntoShort)
+      );
+    }
+    case 3: {
+      var blockData3 = {
+        format_version: "1.16.100",
+        "minecraft:block": {
+          description: {
+            identifier: `ff:${identifier}_large`,
+          },
+          components: {
+            "minecraft:pick_collision": {
+              origin: [-7, 0, -7],
+              size: [14, 16, 14],
+            },
+            "minecraft:placement_filter": {
+              conditions: [
+                {
+                  allowed_faces: ["up"],
+                  block_filter: [
+                    "minecraft:grass",
+                    "minecraft:dirt",
+                    "minecraft:podzol",
+                    "minecraft:moss_block",
+                    "minecraft:dirt_with_roots",
+                  ],
+                },
+              ],
+            },
+            "minecraft:geometry": "geometry.blue_bell",
+            "minecraft:breathability": "air",
+            "tag:flower": {},
+            "minecraft:breakonpush": true,
+            "minecraft:material_instances": {
+              "*": {
+                render_method: "alpha_test",
+                texture: `${identifier}_large`,
+                face_dimming: false,
+                ambient_occlusion: false,
+              },
+            },
+            "minecraft:block_light_emission": 0.14,
+            "minecraft:entity_collision": false,
+            "minecraft:block_light_absorption": 0,
+            "minecraft:destroy_time": 0,
+            "minecraft:loot": `loot_tables/blocks/${identifier}/${identifier}_large.json`,
+            "minecraft:on_interact": {
+              condition: "q.get_equipped_item_name=='bone_meal'",
+              event: "fertilize_block",
+            },
+          },
+          events: {
+            fertilize_block: {
+              spawn_loot: {
+                table: `loot_tables/blocks/${identifier}/${identifier}_large.json`,
+              },
+              decrement_stack: {},
+              run_command: {
+                command: ["particle minecraft:crop_growth_emitter ~ ~ ~"],
+              },
+            },
+          },
+        },
+      };
+      var largeIntoTall = {
+        format_version: 1.12,
+        "minecraft:recipe_shapeless": {
+          description: {
+            identifier: `ff:large_${identifier}_into_tall_${identifier}`,
+          },
+          tags: ["crafting_table"],
+          ingredients: [
+            {
+              item: `ff:${identifier}_large_item`,
+            },
+          ],
+          result: {
+            item: `ff:${identifier}_tall_item`,
+            count: 2,
+          },
+        },
+      };
+      var tallIntoLarge = {
+        format_version: 1.12,
+        "minecraft:recipe_shapeless": {
+          description: {
+            identifier: `ff:tall_${identifier}_into_large_${identifier}`,
+          },
+          tags: ["crafting_table"],
+          ingredients: [
+            {
+              item: `ff:${identifier}_tall_item`,
+              count: 2,
+            },
+          ],
+          result: {
+            item: `ff:${identifier}_large_item`,
+          },
+        },
+      };
+
+      fs.writeFileSync(
+        `BP/blocks/${identifier}/${identifier}_large.json`,
+        JSON.stringify(blockData3)
+      );
+      fs.writeFileSync(
+        `BP/recipes/${identifier}/large_into_tall.json`,
+        JSON.stringify(largeIntoTall)
+      );
+      fs.writeFileSync(
+        `BP/recipes/${identifier}/tall_into_large.json`,
+        JSON.stringify(tallIntoLarge)
+      );
     }
     case 2: {
       var blockData2 = {
@@ -270,136 +622,25 @@ function name(identifier, dye, tier, langName) {
         },
       };
 
-      fs.writeFile(
+      fs.writeFileSync(
         `BP/blocks/${identifier}/${identifier}_tall.json`,
         JSON.stringify(blockData2)
       );
-      fs.writeFile(
+      fs.writeFileSync(
         `BP/recipes/${identifier}/tall_into_short.json`,
         JSON.stringify(tallIntoShort)
       );
-      fs.writeFile(
+      fs.writeFileSync(
         `BP/recipes/${identifier}/short_into_tall.json`,
         JSON.stringify(shortIntoTall)
       );
     }
-    case 3: {
-      var blockData3 = {
+    case 1: {
+      var blockData1 = {
         format_version: "1.16.100",
         "minecraft:block": {
           description: {
-            identifier: `ff:${identifier}_large`,
-          },
-          components: {
-            "minecraft:pick_collision": {
-              origin: [-7, 0, -7],
-              size: [14, 16, 14],
-            },
-            "minecraft:placement_filter": {
-              conditions: [
-                {
-                  allowed_faces: ["up"],
-                  block_filter: [
-                    "minecraft:grass",
-                    "minecraft:dirt",
-                    "minecraft:podzol",
-                    "minecraft:moss_block",
-                    "minecraft:dirt_with_roots",
-                  ],
-                },
-              ],
-            },
-            "minecraft:geometry": "geometry.blue_bell",
-            "minecraft:breathability": "air",
-            "tag:flower": {},
-            "minecraft:breakonpush": true,
-            "minecraft:material_instances": {
-              "*": {
-                render_method: "alpha_test",
-                texture: `${identifier}_large`,
-                face_dimming: false,
-                ambient_occlusion: false,
-              },
-            },
-            "minecraft:block_light_emission": 0.14,
-            "minecraft:entity_collision": false,
-            "minecraft:block_light_absorption": 0,
-            "minecraft:destroy_time": 0,
-            "minecraft:loot": `loot_tables/blocks/${identifier}/${identifier}_large.json`,
-            "minecraft:on_interact": {
-              condition: "q.get_equipped_item_name=='bone_meal'",
-              event: "fertilize_block",
-            },
-          },
-          events: {
-            fertilize_block: {
-              spawn_loot: {
-                table: `loot_tables/blocks/${identifier}/${identifier}_large.json`,
-              },
-              decrement_stack: {},
-              run_command: {
-                command: ["particle minecraft:crop_growth_emitter ~ ~ ~"],
-              },
-            },
-          },
-        },
-      };
-      var largeIntoTall = {
-        format_version: 1.12,
-        "minecraft:recipe_shapeless": {
-          description: {
-            identifier: `ff:large_${identifier}_into_tall_${identifier}`,
-          },
-          tags: ["crafting_table"],
-          ingredients: [
-            {
-              item: `ff:${identifier}_large_item`,
-            },
-          ],
-          result: {
-            item: `ff:${identifier}_tall_item`,
-            count: 2,
-          },
-        },
-      };
-      var tallIntoLarge = {
-        format_version: 1.12,
-        "minecraft:recipe_shapeless": {
-          description: {
-            identifier: `ff:tall_${identifier}_into_large_${identifier}`,
-          },
-          tags: ["crafting_table"],
-          ingredients: [
-            {
-              item: `ff:${identifier}_tall_item`,
-              count: 2,
-            },
-          ],
-          result: {
-            item: `ff:${identifier}_large_item`,
-          },
-        },
-      };
-
-      fs.writeFile(
-        `BP/blocks/${identifier}/${identifier}_large.json`,
-        JSON.stringify(blockData3)
-      );
-      fs.writeFile(
-        `BP/recipes/${identifier}/large_into_tall.json`,
-        JSON.stringify(largeIntoTall)
-      );
-      fs.writeFile(
-        `BP/recipes/${identifier}/tall_into_large.json`,
-        JSON.stringify(tallIntoLarge)
-      );
-    }
-    case 4: {
-      var blockData4 = {
-        format_version: "1.16.100",
-        "minecraft:block": {
-          description: {
-            identifier: `ff:${identifier}_short`,
+            identifier: `ff:${identifier}`,
           },
           components: {
             "minecraft:placement_filter": {
@@ -416,12 +657,12 @@ function name(identifier, dye, tier, langName) {
                 },
               ],
             },
-            "minecraft:loot": `loot_tables/blocks/${identifier}/${identifier}_short.json`,
+            "minecraft:loot": `loot_tables/blocks/${identifier}/${identifier}.json`,
             "minecraft:geometry": "geometry.cross",
             "minecraft:material_instances": {
               "*": {
                 render_method: "alpha_test",
-                texture: `${identifier}_short`,
+                texture: `${identifier}`,
                 face_dimming: false,
                 ambient_occlusion: false,
               },
@@ -440,98 +681,32 @@ function name(identifier, dye, tier, langName) {
           events: {},
         },
       };
-      var shortIntoNormal = {
+      var recipeData = {
         format_version: 1.12,
         "minecraft:recipe_shapeless": {
           description: {
-            identifier: `ff:short_${identifier}_into_normal_${identifier}`,
-          },
-          tags: ["crafting_table"],
-          ingredients: [
-            {
-              item: `ff:${identifier}_short_item`,
-            },
-          ],
-          result: {
-            item: `ff:${identifier}_item`,
-            count: 2,
-          },
-        },
-      };
-      var normalIntoShort = {
-        format_version: 1.12,
-        "minecraft:recipe_shapeless": {
-          description: {
-            identifier: `ff:normal_${identifier}_into_short_${identifier}`,
+            identifier: `ff:dye_from_${identifier}`,
           },
           tags: ["crafting_table"],
           ingredients: [
             {
               item: `ff:${identifier}_item`,
-              count: 2,
             },
           ],
           result: {
-            item: `ff:${identifier}_short_item`,
-          },
-        },
-      };
-      var tallIntoShort = {
-        format_version: 1.12,
-        "minecraft:recipe_shapeless": {
-          description: {
-            identifier: `ff:tall_${identifier}_into_short_${identifier}`,
-          },
-          tags: ["crafting_table"],
-          ingredients: [
-            {
-              item: `ff:${identifier}_tall_item`,
-            },
-          ],
-          result: {
-            item: `ff:${identifier}_short_item`,
-            count: 2,
-          },
-        },
-      };
-      var shortIntoTall = {
-        format_version: 1.12,
-        "minecraft:recipe_shapeless": {
-          description: {
-            identifier: `ff:short_${identifier}_into_tall_${identifier}`,
-          },
-          tags: ["crafting_table"],
-          ingredients: [
-            {
-              item: `ff:${identifier}_short_item`,
-              count: 2,
-            },
-          ],
-          result: {
-            item: `ff:${identifier}_tall_item`,
+            item: "minecraft:dye",
+            data: dye,
           },
         },
       };
 
-      fs.writeFile(
-        `BP/blocks/${identifier}/${identifier}_short.json`,
-        JSON.stringify(blockData4)
+      fs.writeFileSync(
+        `BP/blocks/${identifier}/${identifier}.json`,
+        JSON.stringify(blockData1)
       );
-      fs.writeFile(
-        `BP/recipes/${identifier}/tall_into_short.json`,
-        JSON.stringify(tallIntoShort)
-      );
-      fs.writeFile(
-        `BP/recipes/${identifier}/short_into_tall.json`,
-        JSON.stringify(shortIntoTall)
-      );
-      fs.writeFile(
-        `BP/recipes/${identifier}/short_into_normal.json`,
-        JSON.stringify(shortIntoNormal)
-      );
-      fs.writeFile(
-        `BP/recipes/${identifier}/normal_into_short.json`,
-        JSON.stringify(normalIntoShort)
+      fs.writeFileSync(
+        `BP/recipes/${identifier}/${identifier}_dye.json`,
+        JSON.stringify(recipeData)
       );
     }
   }
@@ -635,15 +810,15 @@ function name(identifier, dye, tier, langName) {
     itemTextureData.texture_data[type] = {
       textures: `textures/items/${identifier}/${type}`,
     };
-    fs.writeFile(
+    fs.writeFileSync(
       `BP/loot_tables/blocks/${identifier}/${type}.json`,
       JSON.stringify(lootData)
     );
-    fs.writeFile(
+    fs.writeFileSync(
       `BP/items/${identifier}/${type}.json`,
       JSON.stringify(itemData)
     );
-    fs.writeFile(
+    fs.writeFileSync(
       `BP/features/${identifier}/${type}_feature.json`,
       JSON.stringify(featureData)
     );
@@ -659,3 +834,4 @@ function name(identifier, dye, tier, langName) {
     JSON.stringify(itemTextureData, null, "  ")
   );
 }
+

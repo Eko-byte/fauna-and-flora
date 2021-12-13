@@ -2,14 +2,14 @@
   "format_version": 1.12,
   "minecraft:recipe_shapeless": {
     "description": {
-      "identifier": "ff:marigold_boquet_into_marigold"
+      "identifier": "ff:marigold_bouquet_into_marigold"
     },
     "tags": [
       "crafting_table"
     ],
     "ingredients": [
       {
-        "item": "ff:marigold_boquet_item",
+        "item": "ff:marigold_bouquet_item",
         "count": 1
       }
     ],

@@ -2,14 +2,14 @@
   "format_version": 1.12,
   "minecraft:recipe_shapeless": {
     "description": {
-      "identifier": "ff:oxeye_daisy_boquet_into_oxeye_daisy"
+      "identifier": "ff:oxeye_daisy_bouquet_into_oxeye_daisy"
     },
     "tags": [
       "crafting_table"
     ],
     "ingredients": [
       {
-        "item": "ff:oxeye_daisy_boquet_item",
+        "item": "ff:oxeye_daisy_bouquet_item",
         "count": 1
       }
     ],

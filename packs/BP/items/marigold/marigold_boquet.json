@@ -2,12 +2,12 @@
   "format_version": "1.16.100",
   "minecraft:item": {
     "description": {
-      "identifier": "ff:marigold_boquet_item",
+      "identifier": "ff:marigold_bouquet_item",
       "category": "nature"
     },
     "components": {
       "minecraft:block_placer": {
-        "block": "ff:marigold_boquet",
+        "block": "ff:marigold_bouquet",
         "use_on": [
           "grass",
           "dirt",
@@ -17,7 +17,7 @@
         ]
       },
       "minecraft:icon": {
-        "texture": "marigold_boquet"
+        "texture": "marigold_bouquet"
       },
       "minecraft:creative_category": {
         "parent": "itemGroup.name.flower"

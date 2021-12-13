@@ -2,14 +2,14 @@
   "format_version": 1.12,
   "minecraft:recipe_shapeless": {
     "description": {
-      "identifier": "ff:grieving_rose_boquet_into_grieving_rose"
+      "identifier": "ff:grieving_rose_bouquet_into_grieving_rose"
     },
     "tags": [
       "crafting_table"
     ],
     "ingredients": [
       {
-        "item": "ff:grieving_rose_boquet_item",
+        "item": "ff:grieving_rose_bouquet_item",
         "count": 1
       }
     ],

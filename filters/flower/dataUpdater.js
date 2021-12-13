@@ -22,13 +22,13 @@ function titleCase(str) {
 }
 
 function createJSON(flowerType) {
-  var flowerTypeBoquet = flowerType + "_boquet";
-  var ffFlowerTypeBoquet = "ff:" + flowerType + "_boquet";
+  var flowerTypeBouquet = flowerType + "_bouquet";
+  var ffFlowerTypeBouquet = "ff:" + flowerType + "_bouquet";
   let blockData = {
     format_version: "1.16.100",
     "minecraft:block": {
       description: {
-        identifier: `ff:${flowerType}_boquet`,
+        identifier: `ff:${flowerType}_bouquet`,
       },
       components: {
         "minecraft:placement_filter": {
@@ -44,12 +44,12 @@ function createJSON(flowerType) {
             },
           ],
         },
-        "minecraft:loot": `loot_tables/blocks/${flowerType}_boquet.json`,
+        "minecraft:loot": `loot_tables/blocks/${flowerType}_bouquet.json`,
         "minecraft:geometry": "geometry.large_fern",
         "minecraft:material_instances": {
           "*": {
             render_method: "alpha_test",
-            texture: `${flowerType}_boquet`,
+            texture: `${flowerType}_bouquet`,
             face_dimming: false,
             ambient_occlusion: false,
           },
@@ -67,7 +67,7 @@ function createJSON(flowerType) {
       events: {
         fertilize_block: {
           spawn_loot: {
-            table: `loot_tables/blocks/${flowerType}_boquet.json`,
+            table: `loot_tables/blocks/${flowerType}_bouquet.json`,
           },
           decrement_stack: {},
           run_command: {
@@ -81,15 +81,15 @@ function createJSON(flowerType) {
     format_version: "1.16.100",
     "minecraft:item": {
       description: {
-        identifier: `ff:${flowerType}_boquet_item`,
+        identifier: `ff:${flowerType}_bouquet_item`,
         category: "nature",
       },
       components: {
         "minecraft:block_placer": {
-          block: `ff:${flowerType}_boquet`,
+          block: `ff:${flowerType}_bouquet`,
           use_on: ["grass", "dirt", "podzol", "moss_block", "dirt_with_roots"],
         },
-        "minecraft:icon": { texture: `${flowerType}_boquet` },
+        "minecraft:icon": { texture: `${flowerType}_bouquet` },
         "minecraft:creative_category": { parent: "itemGroup.name.flower" },
         "tag:flower": {},
         "minecraft:max_stack_size": 64,
@@ -109,9 +109,9 @@ function createJSON(flowerType) {
     format_version: "1.13.0",
     "minecraft:single_block_feature": {
       description: {
-        identifier: `ff:${flowerType}/${flowerType}_boquet_feature`,
+        identifier: `ff:${flowerType}/${flowerType}_bouquet_feature`,
       },
-      places_block: { name: `ff:${flowerType}_boquet` },
+      places_block: { name: `ff:${flowerType}_bouquet` },
       enforce_survivability_rules: true,
       enforce_placement_rules: true,
     },
@@ -135,56 +135,56 @@ function createJSON(flowerType) {
     format_version: 1.12,
     "minecraft:recipe_shapeless": {
       description: {
-        identifier: `ff:${flowerType}_into_${flowerType}_boquet`,
+        identifier: `ff:${flowerType}_into_${flowerType}_bouquet`,
       },
       tags: ["crafting_table"],
       ingredients: [{ item: `ff:${flowerType}_item`, count: 9 }],
-      result: { item: `ff:${flowerType}_boquet_item`, count: 1 },
+      result: { item: `ff:${flowerType}_bouquet_item`, count: 1 },
     },
   };
   let recipeData2 = {
     format_version: 1.12,
     "minecraft:recipe_shapeless": {
       description: {
-        identifier: `ff:${flowerType}_boquet_into_${flowerType}`,
+        identifier: `ff:${flowerType}_bouquet_into_${flowerType}`,
       },
       tags: ["crafting_table"],
-      ingredients: [{ item: `ff:${flowerType}_boquet_item`, count: 1 }],
+      ingredients: [{ item: `ff:${flowerType}_bouquet_item`, count: 1 }],
       result: { item: `ff:${flowerType}_item`, count: 9 },
     },
   };
   fs.writeFileSync(
-    `BP/recipes/${flowerType}/${flowerType}_into_${flowerType}_boquet.json`,
+    `BP/recipes/${flowerType}/${flowerType}_into_${flowerType}_bouquet.json`,
     JSON.stringify(recipeData, null, "  ")
   );
   fs.writeFileSync(
-    `BP/recipes/${flowerType}/${flowerType}_boquet_into_${flowerType}.json`,
+    `BP/recipes/${flowerType}/${flowerType}_bouquet_into_${flowerType}.json`,
     JSON.stringify(recipeData2, null, "  ")
   );
   fs.writeFileSync(
-    `BP/blocks/${flowerType}/${flowerType}_boquet.json`,
+    `BP/blocks/${flowerType}/${flowerType}_bouquet.json`,
     JSON.stringify(blockData, null, "  ")
   );
   fs.writeFileSync(
-    `BP/items/${flowerType}/${flowerType}_boquet.json`,
+    `BP/items/${flowerType}/${flowerType}_bouquet.json`,
     JSON.stringify(itemData, null, "  ")
   );
   fs.writeFileSync(
-    `BP/features/${flowerType}/${flowerType}_boquet_feature.json`,
+    `BP/features/${flowerType}/${flowerType}_bouquet_feature.json`,
     JSON.stringify(featureData, null, "  ")
   );
   fs.writeFileSync(
-    `BP/loot_tables/blocks/${flowerType}/${flowerType}_boquet.json`,
+    `BP/loot_tables/blocks/${flowerType}/${flowerType}_bouquet.json`,
     JSON.stringify(lootData, null, "  ")
   );
   langName = titleCase(flowerType);
-  langData += `\nitem.ff:${flowerType}_boquet_item=${langName} Boquet`;
-  blocksData[ffFlowerTypeBoquet] = { sound: "grass" };
-  textureData.texture_data[flowerTypeBoquet] = {
-    textures: `textures/blocks/${flowerType}/${flowerTypeBoquet}`,
+  langData += `\nitem.ff:${flowerType}_bouquet_item=${langName} Bouquet`;
+  blocksData[ffFlowerTypeBouquet] = { sound: "grass" };
+  textureData.texture_data[flowerTypeBouquet] = {
+    textures: `textures/blocks/${flowerType}/${flowerTypeBouquet}`,
   };
-  itemTextureData.texture_data[flowerTypeBoquet] = {
-    textures: `textures/items/${flowerType}/${flowerTypeBoquet}`,
+  itemTextureData.texture_data[flowerTypeBouquet] = {
+    textures: `textures/items/${flowerType}/${flowerTypeBouquet}`,
   };
 }
 fs.writeFileSync(`RP/texts/en_US.lang`, langData);

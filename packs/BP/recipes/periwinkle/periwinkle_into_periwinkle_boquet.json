@@ -2,7 +2,7 @@
   "format_version": 1.12,
   "minecraft:recipe_shapeless": {
     "description": {
-      "identifier": "ff:periwinkle_into_periwinkle_boquet"
+      "identifier": "ff:periwinkle_into_periwinkle_bouquet"
     },
     "tags": [
       "crafting_table"
@@ -14,7 +14,7 @@
       }
     ],
     "result": {
-      "item": "ff:periwinkle_boquet_item",
+      "item": "ff:periwinkle_bouquet_item",
       "count": 1
     }
   }

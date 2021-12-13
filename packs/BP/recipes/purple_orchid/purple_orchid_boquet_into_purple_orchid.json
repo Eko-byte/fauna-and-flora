@@ -2,14 +2,14 @@
   "format_version": 1.12,
   "minecraft:recipe_shapeless": {
     "description": {
-      "identifier": "ff:purple_orchid_boquet_into_purple_orchid"
+      "identifier": "ff:purple_orchid_bouquet_into_purple_orchid"
     },
     "tags": [
       "crafting_table"
     ],
     "ingredients": [
       {
-        "item": "ff:purple_orchid_boquet_item",
+        "item": "ff:purple_orchid_bouquet_item",
         "count": 1
       }
     ],

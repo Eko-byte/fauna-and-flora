@@ -2,7 +2,7 @@
   "format_version": 1.12,
   "minecraft:recipe_shapeless": {
     "description": {
-      "identifier": "ff:wolfsbane_into_wolfsbane_boquet"
+      "identifier": "ff:wolfsbane_into_wolfsbane_bouquet"
     },
     "tags": [
       "crafting_table"
@@ -14,7 +14,7 @@
       }
     ],
     "result": {
-      "item": "ff:wolfsbane_boquet_item",
+      "item": "ff:wolfsbane_bouquet_item",
       "count": 1
     }
   }

@@ -2,12 +2,12 @@
   "format_version": "1.16.100",
   "minecraft:item": {
     "description": {
-      "identifier": "ff:chocolate_cosmos_boquet_item",
+      "identifier": "ff:chocolate_cosmos_bouquet_item",
       "category": "nature"
     },
     "components": {
       "minecraft:block_placer": {
-        "block": "ff:chocolate_cosmos_boquet",
+        "block": "ff:chocolate_cosmos_bouquet",
         "use_on": [
           "grass",
           "dirt",
@@ -17,7 +17,7 @@
         ]
       },
       "minecraft:icon": {
-        "texture": "chocolate_cosmos_boquet"
+        "texture": "chocolate_cosmos_bouquet"
       },
       "minecraft:creative_category": {
         "parent": "itemGroup.name.flower"

@@ -2,14 +2,14 @@
   "format_version": 1.12,
   "minecraft:recipe_shapeless": {
     "description": {
-      "identifier": "ff:yellow_tulip_boquet_into_yellow_tulip"
+      "identifier": "ff:yellow_tulip_bouquet_into_yellow_tulip"
     },
     "tags": [
       "crafting_table"
     ],
     "ingredients": [
       {
-        "item": "ff:yellow_tulip_boquet_item",
+        "item": "ff:yellow_tulip_bouquet_item",
         "count": 1
       }
     ],

@@ -2,7 +2,7 @@
   "format_version": 1.12,
   "minecraft:recipe_shapeless": {
     "description": {
-      "identifier": "ff:bluebell_into_bluebell_boquet"
+      "identifier": "ff:bluebell_into_bluebell_bouquet"
     },
     "tags": [
       "crafting_table"
@@ -14,7 +14,7 @@
       }
     ],
     "result": {
-      "item": "ff:bluebell_boquet_item",
+      "item": "ff:bluebell_bouquet_item",
       "count": 1
     }
   }

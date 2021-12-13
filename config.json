@@ -1,25 +1,27 @@
 {
-  "name": "faunaFlora",
-  "author": "Eko0087",
-  "packs": {
-    "behaviorPack": "./packs/BP",
-    "resourcePack": "./packs/RP"
-  },
-  "regolith": {
-    "profiles": {
-      "dev": {
-        "unsafe": false,
-        "filters": [
-          {
-            "runWith": "nodejs",
-            "script": "./filters/flower/flower.js"
-          }
-        ],
-        "export": {
-          "target": "development"
-        },
-        "dataPath": "./packs/data"
-      }
-    }
-  }
+	"name": "faunaFlora",
+	"packs": {
+		"behaviorPack": "./packs/BP",
+		"resourcePack": "./packs/RP"
+	},
+	"regolith": {
+		"profiles": {
+			"dev": {
+				"unsafe": false,
+				"filters": [
+					{
+						"runWith": "nodejs",
+						"script": "./filters/flower/flower.js"
+					}
+				],
+				"export": {
+					"target": "development"
+				},
+				"dataPath": "./packs/data"
+			}
+		}
+	},
+	"authors": [
+		"Eko0087"
+	]
 }
