@@ -15,12 +15,17 @@
               "minecraft:grass",
               "minecraft:dirt",
               "minecraft:podzol",
-              "minecraft:moss_block"
+              "minecraft:moss_block",
+              "azalea_leaves",
+              "azalea_leaves_flowered",
+              "flowering_azalea",
+              "azalea",
+              "dirt_with_roots"
             ]
           }
         ]
       },
-      "minecraft:loot": "loot_tables/blocks/azalea_bouquet.json",
+      "minecraft:loot": "loot_tables/blocks/azalea/azalea_bouquet.json",
       "minecraft:geometry": "geometry.large_fern",
       "minecraft:material_instances": {
         "*": {
@@ -43,7 +48,7 @@
     "events": {
       "fertilize_block": {
         "spawn_loot": {
-          "table": "loot_tables/blocks/azalea_bouquet.json"
+          "table": "loot_tables/blocks/azalea/azalea_bouquet.json"
         },
         "decrement_stack": {},
         "run_command": {

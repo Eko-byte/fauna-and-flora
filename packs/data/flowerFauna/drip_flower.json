@@ -1,0 +1,31 @@
+{
+  "identifier": "drip_flower",
+  "dye": 9,
+  "tier": 1,
+  "langName": "Drip Flower",
+  "bouquet": false,
+  "geometryNormal": "geometry.drip_flower",
+  "ambientOcclusion": true,
+  "faceDimming": true,
+  "entityCollision": {
+    "origin": [-8, 0, -8],
+    "size": [16, 7, 16]
+  },
+  "pickCollision": {
+    "origin": [-8, 0, -8],
+    "size": [16, 7, 16]
+  },
+  "itemTextureNormal": true,
+  "placement": [
+    "grass",
+    "dirt",
+    "podzol",
+    "moss_block",
+    "dirt_with_roots",
+    "big_dripleaf",
+    "azalea_leaves",
+    "azalea_leaves_flowered",
+    "flowering_azalea",
+    "azalea"
+  ]
+}

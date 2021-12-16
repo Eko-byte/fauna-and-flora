@@ -20,7 +20,7 @@
           }
         ]
       },
-      "minecraft:loot": "loot_tables/blocks/cyan_rose_bouquet.json",
+      "minecraft:loot": "loot_tables/blocks/cyan_rose/cyan_rose_bouquet.json",
       "minecraft:geometry": "geometry.large_fern",
       "minecraft:material_instances": {
         "*": {
@@ -43,7 +43,7 @@
     "events": {
       "fertilize_block": {
         "spawn_loot": {
-          "table": "loot_tables/blocks/cyan_rose_bouquet.json"
+          "table": "loot_tables/blocks/cyan_rose/cyan_rose_bouquet.json"
         },
         "decrement_stack": {},
         "run_command": {
