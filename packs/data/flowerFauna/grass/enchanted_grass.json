@@ -1,0 +1,57 @@
+{
+  "identifier": "enchanted_grass",
+  "tier": 3,
+  "langName": "Enchanted Grass",
+  "fern": true,
+  "extraTall": false,
+  "geometryNormal": "geometry.cross",
+  "geometryShort": "geometry.cross",
+  "geometryTall": "geometry.double_cross",
+  "geometryLarge": "geometry.blue_bell",
+  "geometryFern": "geometry.large_fern",
+  "ambientOcclusion": false,
+  "faceDimming": false,
+  "entityCollision": false,
+  "pickCollision": {
+    "origin": [-3.5, 0, -3.5],
+    "size": [7, 10, 7]
+  },
+  "pickCollisionLarge": {
+    "origin": [-7, 0, -7],
+    "size": [14, 16, 14]
+  },
+  "entityCollisionLarge": false,
+  "pickCollisionTallTop": {
+    "origin": [-3.5, 0, -3.5],
+    "size": [7, 10, 7]
+  },
+  "pickCollisionTallBottom": {
+    "origin": [-3.5, 0, -3.5],
+    "size": [7, 16, 7]
+  },
+  "entityCollisionTallTop": false,
+  "entityCollisionTallBottom": false,
+  "itemTextureNormal": false,
+  "placement": [
+    "grass",
+    "dirt",
+    "podzol",
+    "moss_block",
+    "dirt_with_roots"
+  ],
+  "placementTallBlock": [
+    "grass",
+    "dirt",
+    "podzol",
+    "moss_block",
+    "dirt_with_roots",
+    "ff:enchanted_grass_tall"
+  ],
+  "placementTall": [
+    "grass",
+    "dirt",
+    "podzol",
+    "moss_block",
+    "dirt_with_roots"
+  ]
+}

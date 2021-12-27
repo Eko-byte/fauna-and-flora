@@ -1,10 +1,32 @@
 const fs = require("fs");
 const glob = require("glob");
 
-glob("./data/flowerFauna/**/*.json", (err, filePath) => {
-  filePath.forEach((v) => {
+glob("./data/flowerFauna/flower/**/*.json", (err, filePath) => {
+  filePath.forEach(v => {
     let tempData = JSON.parse(fs.readFileSync(v).toString());
-    name(tempData.identifier, tempData.dye, tempData.tier, tempData.langName, tempData.geometryNormal, tempData.geometryTall, tempData.geometryLarge, tempData.geometryShort, tempData.geometryBouquet, tempData.bouquet, tempData.pickCollision, tempData.entityCollision, tempData.itemTextureNormal, tempData.ambientOcclusion, tempData.faceDimming, tempData.pickCollision, tempData.entityCollisionLarge, tempData.placement, tempData.placementTallBlock, tempData.placementTall);
+    name(
+      tempData.identifier,
+      tempData.dye,
+      tempData.tier,
+      tempData.langName,
+      tempData.bouquet,
+      tempData.extraTall,
+      tempData.geometryNormal,
+      tempData.geometryTall,
+      tempData.geometryLarge,
+      tempData.geometryShort,
+      tempData.geometryBouquet,
+      tempData.pickCollision,
+      tempData.entityCollision,
+      tempData.itemTextureNormal,
+      tempData.ambientOcclusion,
+      tempData.faceDimming,
+      tempData.pickCollision,
+      tempData.entityCollisionLarge,
+      tempData.placement,
+      tempData.placementTallBlock,
+      tempData.placementTall
+    );
   });
 });
 function makeDir(path) {
@@ -12,7 +34,29 @@ function makeDir(path) {
     fs.mkdirSync(path, { recursive: true });
   } catch {}
 }
-function name(identifier, dye, tier, langName, geometryNormal, geometryTall, geometryLarge, geometryShort, geometryBouquet, bouquet, pickCollision, entityCollision, itemTextureNormal, ambientOcclusion, faceDimming, pickCollisionLarge, entityCollisionLarge, placement, placementTallBlock, placementTall) {
+function name(
+  identifier,
+  dye,
+  tier,
+  langName,
+  bouquet,
+  extraTall,
+  geometryNormal,
+  geometryTall,
+  geometryLarge,
+  geometryShort,
+  geometryBouquet,
+  pickCollision,
+  entityCollision,
+  itemTextureNormal,
+  ambientOcclusion,
+  faceDimming,
+  pickCollisionLarge,
+  entityCollisionLarge,
+  placement,
+  placementTallBlock,
+  placementTall
+) {
   let blocksData = JSON.parse(fs.readFileSync("RP/blocks.json").toString());
   let textureData = JSON.parse(
     fs.readFileSync("RP/textures/terrain_texture.json").toString()
@@ -30,9 +74,9 @@ function name(identifier, dye, tier, langName, geometryNormal, geometryTall, geo
   makeDir(`RP/textures/blocks/${identifier}`);
   makeDir(`RP/textures/items/${identifier}`);
 
-  if(bouquet) {
-    var identifierBouquet = identifier + "_bouquet";
-    var ffIdentifierBouquet = "ff:" + identifier + "_bouquet";
+  if (bouquet) {
+    var identifierBouquet = identifier + `_bouquet`;
+    var ffIdentifierBouquet = "ff:" + identifier + `_bouquet`;
     let bouquetBlockData = {
       format_version: "1.16.100",
       "minecraft:block": {
@@ -48,7 +92,7 @@ function name(identifier, dye, tier, langName, geometryNormal, geometryTall, geo
               },
             ],
           },
-          "minecraft:loot": `loot_tables/blocks/${identifier}_bouquet.json`,
+          "minecraft:loot": `loot_tables/blocks/${identifier}/${identifier}_bouquet.json`,
           "minecraft:geometry": geometryBouquet,
           "minecraft:material_instances": {
             "*": {
@@ -327,57 +371,284 @@ function name(identifier, dye, tier, langName, geometryNormal, geometryTall, geo
       );
     }
     case 3: {
-      var blockData3 = {
-        format_version: "1.16.100",
-        "minecraft:block": {
-          description: {
-            identifier: `ff:${identifier}_large`,
-          },
-          components: {
-            "minecraft:pick_collision": pickCollisionLarge,
-            "minecraft:placement_filter": {
-              conditions: [
-                {
-                  allowed_faces: ["up"],
-                  block_filter: placement,
+      if (!extraTall) {
+        var blockData3 = {
+          format_version: "1.16.100",
+          "minecraft:block": {
+            description: {
+              identifier: `ff:${identifier}_large`,
+            },
+            components: {
+              "minecraft:pick_collision": pickCollisionLarge,
+              "minecraft:placement_filter": {
+                conditions: [
+                  {
+                    allowed_faces: ["up"],
+                    block_filter: placement,
+                  },
+                ],
+              },
+              "minecraft:geometry": geometryLarge,
+              "minecraft:breathability": "air",
+              "tag:flower": {},
+              "minecraft:breakonpush": true,
+              "minecraft:material_instances": {
+                "*": {
+                  render_method: "alpha_test",
+                  texture: `${identifier}_large`,
+                  face_dimming: faceDimming,
+                  ambient_occlusion: ambientOcclusion,
                 },
-              ],
-            },
-            "minecraft:geometry": geometryLarge,
-            "minecraft:breathability": "air",
-            "tag:flower": {},
-            "minecraft:breakonpush": true,
-            "minecraft:material_instances": {
-              "*": {
-                render_method: "alpha_test",
-                texture: `${identifier}_large`,
-                face_dimming: faceDimming,
-                ambient_occlusion: ambientOcclusion,
+              },
+              "minecraft:block_light_emission": 0.14,
+              "minecraft:entity_collision": entityCollisionLarge,
+              "minecraft:block_light_absorption": 0,
+              "minecraft:destroy_time": 0,
+              "minecraft:loot": `loot_tables/blocks/${identifier}/${identifier}_large.json`,
+              "minecraft:on_interact": {
+                condition: "q.get_equipped_item_name=='bone_meal'",
+                event: "fertilize_block",
               },
             },
-            "minecraft:block_light_emission": 0.14,
-            "minecraft:entity_collision": entityCollisionLarge,
-            "minecraft:block_light_absorption": 0,
-            "minecraft:destroy_time": 0,
-            "minecraft:loot": `loot_tables/blocks/${identifier}/${identifier}_large.json`,
-            "minecraft:on_interact": {
-              condition: "q.get_equipped_item_name=='bone_meal'",
-              event: "fertilize_block",
-            },
-          },
-          events: {
-            fertilize_block: {
-              spawn_loot: {
-                table: `loot_tables/blocks/${identifier}/${identifier}_large.json`,
-              },
-              decrement_stack: {},
-              run_command: {
-                command: ["particle minecraft:crop_growth_emitter ~ ~ ~"],
+            events: {
+              fertilize_block: {
+                spawn_loot: {
+                  table: `loot_tables/blocks/${identifier}/${identifier}_large.json`,
+                },
+                decrement_stack: {},
+                run_command: {
+                  command: ["particle minecraft:crop_growth_emitter ~ ~ ~"],
+                },
               },
             },
           },
-        },
-      };
+        };
+      } else {
+        var blockData3 = {
+          "format_version": "1.16.100",
+          "minecraft:block": {
+            "description": {
+              "identifier": `ff:${identifier}_large`,
+              "properties": {
+                "ff:upper_bit": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            },
+            "permutations": [
+              {
+                "condition": "query.block_property('ff:upper_bit') == 0",
+                "components": {
+                  "tag:flower_bottom": {},
+                  "minecraft:pick_collision": {
+                    "origin": [
+                      -3.5,
+                      0,
+                      -3.5
+                    ],
+                    "size": [
+                      7,
+                      16,
+                      7
+                    ]
+                  },
+                  "minecraft:loot": `loot_tables/blocks/${identifier}/${identifier}_large.json`
+                }
+              },
+              {
+                "condition": "query.block_property('ff:upper_bit') == 1",
+                "components": {
+                  "tag:flower_middle": {},
+                  "minecraft:material_instances": {
+                    "*": {
+                      "render_method": "alpha_test",
+                      "texture": "nothing",
+                      "face_dimming": false,
+                      "ambient_occlusion": false
+                    }
+                  },
+                  "minecraft:on_player_destroyed": {
+                    "event": "destroy_middle"
+                  },
+                  "minecraft:pick_collision": {
+                    "origin": [
+                      -3.5,
+                      0,
+                      -3.5
+                    ],
+                    "size": [
+                      7,
+                      16,
+                      7
+                    ]
+                  }
+                }
+              },
+              {
+                "condition": "query.block_property('ff:upper_bit') == 2",
+                "components": {
+                  "tag:flower_top": {},
+                  "minecraft:material_instances": {
+                    "*": {
+                      "render_method": "alpha_test",
+                      "texture": "nothing",
+                      "face_dimming": false,
+                      "ambient_occlusion": false
+                    }
+                  },
+                  "minecraft:on_player_destroyed": {
+                    "event": "destroy_top"
+                  },
+                  "minecraft:pick_collision": {
+                    "origin": [
+                      -3.5,
+                      0,
+                      -3.5
+                    ],
+                    "size": [
+                      7,
+                      10,
+                      7
+                    ]
+                  }
+                }
+              }
+            ],
+            "components": {
+              "minecraft:loot": "loot_tables/empty.json",
+              "minecraft:placement_filter": {
+                "conditions": [
+                  {
+                    "allowed_faces": [
+                      "up"
+                    ],
+                    "block_filter": [
+                      "minecraft:grass",
+                      "minecraft:dirt",
+                      "minecraft:podzol",
+                      `ff:${identifier}_large`,
+                      "moss_block",
+                      "dirt_with_roots"
+                    ]
+                  }
+                ]
+              },
+              "minecraft:geometry": geometryLarge,
+              "minecraft:breathability": "air",
+              "tag:flower": {},
+              "minecraft:breakonpush": true,
+              "minecraft:material_instances": {
+                "*": {
+                  "render_method": "alpha_test",
+                  "texture": `${identifier}_large`,
+                  "face_dimming": false,
+                  "ambient_occlusion": false
+                }
+              },
+              "minecraft:block_light_emission": 0.14,
+              "minecraft:entity_collision": false,
+              "minecraft:block_light_absorption": 0,
+              "minecraft:destroy_time": 0,
+              "minecraft:on_interact": {
+                "condition": "q.get_equipped_item_name=='bone_meal'",
+                "event": "fertilize_block"
+              },
+              "minecraft:on_placed": {
+                "event": "check_for_bottom"
+              }
+            },
+            "events": {
+              "check_for_bottom": {
+                "sequence": [
+                  {
+                    "trigger": {
+                      "event": "add_middle",
+                      "target": "self"
+                    }
+                  },
+                  {
+                    "trigger": {
+                      "event": "add_top",
+                      "target": "self"
+                    }
+                  },
+                  {
+                    "condition": "q.block_neighbor_has_all_tags(0,-1,0,'flower_bottom')",
+                    "set_block_property": {
+                      "ff:upper_bit": 1
+                    }
+                  },
+                  {
+                    "condition": "q.block_neighbor_has_all_tags(0,-1,0,'flower_middle')",
+                    "set_block_property": {
+                      "ff:upper_bit": 2
+                    }
+                  }
+                ]
+              },
+              "add_middle": {
+                "sequence": [
+                  {
+                    "condition": "query.block_property('ff:upper_bit') == 0",
+                    "set_block_at_pos": {
+                      "block_offset": [
+                        0,
+                        1,
+                        0
+                      ],
+                      "block_type": `ff:${identifier}_large`
+                    }
+                  }
+                ]
+              },
+              "add_top": {
+                "sequence": [
+                  {
+                    "condition": "query.block_property('ff:upper_bit') == 0",
+                    "set_block_at_pos": {
+                      "block_offset": [
+                        0,
+                        2,
+                        0
+                      ],
+                      "block_type": `ff:${identifier}_large`
+                    }
+                  }
+                ]
+              },
+              "destroy_top": {
+                "run_command": {
+                  "command": [
+                    "fill ~ ~-1 ~ ~ ~-1 ~ air 0",
+                    "fill ~ ~-2 ~ ~ ~-2 ~ air 0 destroy"
+                  ]
+                }
+              },
+              "destroy_middle": {
+                "run_command": {
+                  "command": [
+                    "fill ~ ~-1 ~ ~ ~-1 ~ air 0 destroy",
+                    "fill ~ ~1 ~ ~ ~1 ~ air 0"
+                  ]
+                }
+              },
+              "fertilize_block": {
+                "spawn_loot": {
+                  "table": `loot_tables/blocks/${identifier}/${identifier}_large.json`
+                },
+                "decrement_stack": {},
+                "run_command": {
+                  "command": [
+                    "particle minecraft:crop_growth_emitter ~ ~ ~"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
       var largeIntoTall = {
         format_version: 1.12,
         "minecraft:recipe_shapeless": {
@@ -647,32 +918,34 @@ function name(identifier, dye, tier, langName, geometryNormal, geometryTall, geo
           events: {},
         },
       };
-      var recipeData = {
-        format_version: 1.12,
-        "minecraft:recipe_shapeless": {
-          description: {
-            identifier: `ff:dye_from_${identifier}`,
-          },
-          tags: ["crafting_table"],
-          ingredients: [
-            {
-              item: `ff:${identifier}_item`,
+      if (dye) {
+        var recipeData = {
+          format_version: 1.12,
+          "minecraft:recipe_shapeless": {
+            description: {
+              identifier: `ff:dye_from_${identifier}`,
             },
-          ],
-          result: {
-            item: "minecraft:dye",
-            data: dye,
+            tags: ["crafting_table"],
+            ingredients: [
+              {
+                item: `ff:${identifier}_item`,
+              },
+            ],
+            result: {
+              item: "minecraft:dye",
+              data: dye,
+            },
           },
-        },
-      };
+        };
+        fs.writeFileSync(
+          `BP/recipes/${identifier}/${identifier}_dye.json`,
+          JSON.stringify(recipeData)
+        );
+      }
 
       fs.writeFileSync(
         `BP/blocks/${identifier}/${identifier}.json`,
         JSON.stringify(blockData1)
-      );
-      fs.writeFileSync(
-        `BP/recipes/${identifier}/${identifier}_dye.json`,
-        JSON.stringify(recipeData)
       );
     }
   }
@@ -681,27 +954,26 @@ function name(identifier, dye, tier, langName, geometryNormal, geometryTall, geo
       var type = `${identifier}`;
       var langType = `${langName}`;
       if (itemTextureNormal) {
-        var folder = "items"
-      }
-      if (!itemTextureNormal) {
-        var folder = "blocks"
+        var folder = "items";
+      } else if (!itemTextureNormal) {
+        var folder = "blocks";
       }
     } else if (count === 2) {
       var type = `${identifier}_tall`;
       var langType = `Tall ${langName}`;
-      var folder = "items"
+      var folder = "items";
+      var placement = placementTall
     } else if (count === 3) {
       var type = `${identifier}_large`;
       var langType = `Large ${langName}`;
-      var folder = "items"
+      var folder = "items";
     } else if (count === 4) {
       var type = `${identifier}_short`;
       var langType = `Short ${langName}`;
       if (itemTextureNormal) {
-        var folder = "items"
-      }
-      if (!itemTextureNormal) {
-        var folder = "blocks"
+        var folder = "items";
+      } else if (!itemTextureNormal) {
+        var folder = "blocks";
       }
     }
     var lootData = {
@@ -808,4 +1080,3 @@ function name(identifier, dye, tier, langName, geometryNormal, geometryTall, geo
     JSON.stringify(itemTextureData, null, "  ")
   );
 }
-

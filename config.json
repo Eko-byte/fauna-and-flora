@@ -12,6 +12,10 @@
 					{
 						"runWith": "nodejs",
 						"script": "./filters/flower/flower.js"
+					},
+					{
+						"runWith": "nodejs",
+						"script": "./filters/flower/grass.js"
 					}
 				],
 				"export": {

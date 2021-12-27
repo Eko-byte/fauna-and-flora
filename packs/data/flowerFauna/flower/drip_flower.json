@@ -1,6 +1,6 @@
 {
   "identifier": "drip_flower",
-  "dye": 9,
+  "dye": false,
   "tier": 1,
   "langName": "Drip Flower",
   "bouquet": false,

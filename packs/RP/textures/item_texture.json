@@ -632,6 +632,15 @@
     },
     "yellow_tulip_bouquet": {
       "textures": "textures/items/yellow_tulip/yellow_tulip_bouquet"
+    },
+    "dead_fern": {
+      "textures": "textures/items/dead_bush/dead_bush_bouquet"
+    },
+    "dead_bush_large": {
+      "textures": "textures/items/dead_bush/dead_bush_large"
+    },
+    "dead_bush_tall": {
+      "textures": "textures/items/dead_bush/dead_bush_tall"
     }
   }
 }

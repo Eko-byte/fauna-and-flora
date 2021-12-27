@@ -1,5 +1,10 @@
 {
+  "num_mip_levels": 0,
+	"padding": 0,
   "texture_data": {
+    "test_block": {
+      "textures": "textures/blocks/test_block"
+    },
     "nothing": {
       "textures": "textures/blocks/nothing"
     },
@@ -635,6 +640,15 @@
     },
     "yellow_tulip_bouquet": {
       "textures": "textures/blocks/yellow_tulip/yellow_tulip_bouquet"
+    },
+    "dead_fern": {
+      "textures": "textures/blocks/dead_bush/dead_bush_bouquet"
+    },
+    "dead_bush_large": {
+      "textures": "textures/blocks/dead_bush/dead_bush_large"
+    },
+    "dead_bush_tall": {
+      "textures": "textures/blocks/dead_bush/dead_bush_tall"
     }
   }
 }

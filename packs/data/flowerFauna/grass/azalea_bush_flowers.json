@@ -1,0 +1,48 @@
+{
+  "identifier": "azalea_bush_flowers",
+  "tier": 2,
+  "langName": "Flowering Azalea Bush",
+  "fern": false,
+  "geometryNormal": "geometry.cross",
+  "geometryTall": "geometry.blue_bell",
+  "ambientOcclusion": false,
+  "faceDimming": false,
+  "entityCollision": false,
+  "pickCollision": {
+    "origin": [-3.5, 0, -3.5],
+    "size": [7, 10, 7]
+  },
+  "pickCollisionTallTop": {
+    "origin": [-3.5, 0, -3.5],
+    "size": [7, 10, 7]
+  },
+  "pickCollisionTallBottom": {
+    "origin": [-3.5, 0, -3.5],
+    "size": [7, 16, 7]
+  },
+  "entityCollisionTallTop": false,
+  "entityCollisionTallBottom": false,
+  "itemTextureNormal": false,
+  "placement": [
+    "grass",
+    "dirt",
+    "podzol",
+    "moss_block",
+    "dirt_with_roots"
+  ],
+  "placementTallBlock": [
+    "grass",
+    "dirt",
+    "podzol",
+    "moss_block",
+    "dirt_with_roots",
+    "ff:azalea_bush_flowers_tall"
+  ],
+  "placementTall": [
+    "grass",
+    "dirt",
+    "podzol",
+    "moss_block",
+    "dirt_with_roots"
+  ]
+}

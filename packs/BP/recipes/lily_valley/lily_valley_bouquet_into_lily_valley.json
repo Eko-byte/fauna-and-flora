@@ -14,7 +14,8 @@
       }
     ],
     "result": {
-      "item": "ff:lily_valley_item",
+      "item": "minecraft:red_flower",
+      "data": 10,
       "count": 9
     }
   }

@@ -1,0 +1,22 @@
+{
+  "identifier": "shrub",
+  "tier": 1,
+  "langName": "Shrub",
+  "fern": false,
+  "geometryNormal": "geometry.blue_bell",
+  "ambientOcclusion": false,
+  "faceDimming": false,
+  "entityCollision": false,
+  "pickCollision": {
+    "origin": [-7, 0, -7],
+    "size": [14, 10, 14]
+  },
+  "itemTextureNormal": true,
+  "placement": [
+    "grass",
+    "dirt",
+    "podzol",
+    "moss_block",
+    "dirt_with_roots"
+  ]
+}

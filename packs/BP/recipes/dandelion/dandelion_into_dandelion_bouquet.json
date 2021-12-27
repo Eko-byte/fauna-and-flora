@@ -9,7 +9,7 @@
     ],
     "ingredients": [
       {
-        "item": "ff:dandelion_item",
+        "item": "minecraft:yellow_flower",
         "count": 9
       }
     ],

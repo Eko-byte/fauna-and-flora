@@ -14,7 +14,8 @@
       }
     ],
     "result": {
-      "item": "ff:blue_orchid_item",
+      "item": "minecraft:red_flower",
+      "data": 1,
       "count": 9
     }
   }

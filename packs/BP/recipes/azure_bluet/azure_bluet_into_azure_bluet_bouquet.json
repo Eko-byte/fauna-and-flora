@@ -9,7 +9,8 @@
     ],
     "ingredients": [
       {
-        "item": "ff:azure_bluet_item",
+        "item": "minecraft:red_flower",
+        "data": 3,
         "count": 9
       }
     ],

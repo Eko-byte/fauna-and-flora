@@ -14,7 +14,8 @@
       }
     ],
     "result": {
-      "item": "ff:allium_item",
+      "item": "minecraft:red_flower",
+      "data": 2,
       "count": 9
     }
   }

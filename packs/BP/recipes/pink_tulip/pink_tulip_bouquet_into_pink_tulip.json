@@ -14,7 +14,8 @@
       }
     ],
     "result": {
-      "item": "ff:pink_tulip_item",
+      "item": "minecraft:red_flower",
+      "data": 7,
       "count": 9
     }
   }

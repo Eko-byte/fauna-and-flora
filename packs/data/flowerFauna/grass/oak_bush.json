@@ -1,14 +1,10 @@
 {
-  "identifier": "nasturtium",
-  "dye": 14,
-  "tier": 3,
-  "langName": "Nasturtium",
-  "bouquet": true,
+  "identifier": "oak_bush",
+  "tier": 2,
+  "langName": "Oak Bush",
+  "fern": false,
   "geometryNormal": "geometry.cross",
-  "geometryShort": "geometry.cross",
-  "geometryTall": "geometry.double_cross",
-  "geometryLarge": "geometry.blue_bell",
-  "geometryBouquet": "geometry.large_fern",
+  "geometryTall": "geometry.blue_bell",
   "ambientOcclusion": false,
   "faceDimming": false,
   "entityCollision": false,
@@ -20,6 +16,16 @@
     "origin": [-7, 0, -7],
     "size": [14, 16, 14]
   },
+  "pickCollisionTallTop": {
+    "origin": [-7, 0, -7],
+    "size": [14, 16, 14]
+  },
+  "pickCollisionTallBottom": {
+    "origin": [-7, 0, -7],
+    "size": [14, 16, 14]
+  },
+  "entityCollisionTallTop": false,
+  "entityCollisionTallBottom": false,
   "entityCollisionLarge": false,
   "itemTextureNormal": false,
   "placement": [
@@ -35,7 +41,7 @@
     "podzol",
     "moss_block",
     "dirt_with_roots",
-    "ff:nasturtium"
+    "ff:oak_bush_tall"
   ],
   "placementTall": [
     "grass",

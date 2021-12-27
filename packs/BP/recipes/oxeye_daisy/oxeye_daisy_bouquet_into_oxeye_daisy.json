@@ -14,7 +14,8 @@
       }
     ],
     "result": {
-      "item": "ff:oxeye_daisy_item",
+      "item": "minecraft:red_flower",
+      "data": 8,
       "count": 9
     }
   }

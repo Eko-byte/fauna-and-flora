@@ -1,0 +1,42 @@
+{
+  "identifier": "moonflower",
+  "dye": 12,
+  "tier": 3,
+  "langName": "Moonflower",
+  "bouquet": true,
+  "extraTall": true,
+  "geometryNormal": "geometry.moonflower_small",
+  "geometryTall": "geometry.moonflower",
+  "geometryLarge": "geometry.triple_moonflower",
+  "geometryBouquet": "geometry.large_fern",
+  "ambientOcclusion": false,
+  "faceDimming": false,
+  "entityCollision": false,
+  "pickCollision": {
+    "origin": [-3.5, 0, -3.5],
+    "size": [7, 10, 7]
+  },
+  "itemTextureNormal": true,
+  "placement": [
+    "grass",
+    "dirt",
+    "podzol",
+    "moss_block",
+    "dirt_with_roots"
+  ],
+  "placementTallBlock": [
+    "grass",
+    "dirt",
+    "podzol",
+    "moss_block",
+    "dirt_with_roots",
+    "ff:moonflower_tall"
+  ],
+  "placementTall": [
+    "grass",
+    "dirt",
+    "podzol",
+    "moss_block",
+    "dirt_with_roots"
+  ]
+}

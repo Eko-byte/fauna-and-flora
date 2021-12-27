@@ -637,5 +637,14 @@
   },
   "ff:yellow_tulip_bouquet": {
     "sound": "grass"
+  },
+  "ff:dead_fern": {
+    "sound": "grass"
+  },
+  "ff:dead_bush_large": {
+    "sound": "grass"
+  },
+  "ff:dead_bush_tall": {
+    "sound": "grass"
   }
 }
