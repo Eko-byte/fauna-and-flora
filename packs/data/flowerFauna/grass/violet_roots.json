@@ -1,0 +1,82 @@
+{
+  "identifier": "violet_roots",
+  "tier": 3,
+  "langName": "Violet Roots",
+  "fern": false,
+  "extraTall": true,
+  "geometryNormal": "geometry.violet_roots",
+  "geometryTall": "geometry.violet_roots_tall",
+  "geometryLarge": "geometry.violet_roots_large",
+  "ambientOcclusion": false,
+  "faceDimming": false,
+  "entityCollision": false,
+  "pickCollision": {
+    "origin": [-3.5, 0, -3.5],
+    "size": [7, 10, 7]
+  },
+  "pickCollisionTallTop": {
+    "origin": [-3.5, 0, -3.5],
+    "size": [7, 10, 7]
+  },
+  "pickCollisionTallBottom": {
+    "origin": [-3.5, 0, -3.5],
+    "size": [7, 16, 7]
+  },
+  "entityCollisionTallTop": false,
+  "entityCollisionTallBottom": false,
+  "itemTextureNormal": true,
+  "placement": [
+    "grass",
+    "dirt",
+    "podzol",
+    "moss_block",
+    "dirt_with_roots",
+    "crimson_nylium",
+    "warped_nylium",
+    "netherrack",
+    "soul_sand",
+    "soul_soil",
+    "magma"
+  ],
+  "placementTallBlock": [
+    "grass",
+    "dirt",
+    "podzol",
+    "moss_block",
+    "dirt_with_roots",
+    "ff:violet_roots_tall",
+    "crimson_nylium",
+    "warped_nylium",
+    "netherrack",
+    "soul_sand",
+    "soul_soil",
+    "magma"
+  ],
+  "placementTall": [
+    "grass",
+    "dirt",
+    "podzol",
+    "moss_block",
+    "dirt_with_roots",
+    "crimson_nylium",
+    "warped_nylium",
+    "netherrack",
+    "soul_sand",
+    "soul_soil",
+    "magma"
+  ],
+  "placementExtraTallBlock": [
+    "grass",
+    "dirt",
+    "podzol",
+    "moss_block",
+    "dirt_with_roots",
+    "ff:violet_roots_large",
+    "crimson_nylium",
+    "warped_nylium",
+    "netherrack",
+    "soul_sand",
+    "soul_soil",
+    "magma"
+  ]
+}
