@@ -60,6 +60,7 @@
     ],
     "components": {
       "minecraft:geometry": "geometry.cactus_group",
+      "minecraft:loot": "loot_tables/empty.json",
       "minecraft:breathability": "air",
       "minecraft:breakonpush": true,
       "minecraft:material_instances": {

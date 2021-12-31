@@ -6,6 +6,9 @@
       "category": "nature"
     },
     "components": {
+      "minecraft:creative_category": {
+        "parent":"itemGroup.name.nature"
+      },
       "minecraft:icon": { "texture": "lotus_flower" },
       "tag:flower": {},
       "minecraft:liquid_clipped": true,

@@ -1,0 +1,37 @@
+{
+  "format_version": "1.18.0",
+  "minecraft:feature_rules": {
+    "description": {
+      "identifier": "ff:drip_flower_rule",
+      "places_feature": "ff:drip_flower/drip_flower_snap_feature"
+    },
+    "conditions": {
+      "placement_pass": "surface_pass",
+      "minecraft:biome_filter": [
+        {
+          "test": "has_biome_tag",
+          "value": "lush_caves"
+        }
+      ]
+    },
+    "distribution": {
+      "iterations": 150,
+      "scatter_chance": {
+        "numerator": 1,
+        "denominator": 5
+      },
+      "x": {
+        "distribution": "uniform",
+        "extent": [-8, 8]
+      },
+      "y": {
+        "distribution": "uniform",
+        "extent": [-64, 64]
+      },
+      "z": {
+        "distribution": "uniform",
+        "extent": [-8, 8]
+      }
+    }
+  }
+}

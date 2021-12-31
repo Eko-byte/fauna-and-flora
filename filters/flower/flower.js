@@ -21,7 +21,7 @@ glob("./data/flowerFauna/flower/**/*.json", (err, filePath) => {
       tempData.itemTextureNormal,
       tempData.ambientOcclusion,
       tempData.faceDimming,
-      tempData.pickCollision,
+      tempData.pickCollisionLarge,
       tempData.entityCollisionLarge,
       tempData.placement,
       tempData.placementTallBlock,
@@ -1046,6 +1046,7 @@ function name(
         },
         enforce_survivability_rules: true,
         enforce_placement_rules: true,
+        may_replace: ["minecraft:air"]
       },
     };
     langData += `\nitem.ff:${type}_item=${langType}`;

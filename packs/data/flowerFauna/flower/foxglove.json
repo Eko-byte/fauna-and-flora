@@ -1,0 +1,42 @@
+{
+  "identifier": "foxglove",
+  "dye": 13,
+  "tier": 3,
+  "langName": "Foxglove",
+  "bouquet": true,
+  "extraTall": true,
+  "geometryNormal": "geometry.foxglove",
+  "geometryTall": "geometry.foxglove_tall",
+  "geometryLarge": "geometry.foxglove_large",
+  "geometryBouquet": "geometry.large_fern",
+  "ambientOcclusion": false,
+  "faceDimming": false,
+  "entityCollision": false,
+  "pickCollision": {
+    "origin": [-3.5, 0, -3.5],
+    "size": [7, 10, 7]
+  },
+  "itemTextureNormal": false,
+  "placement": [
+    "grass",
+    "dirt",
+    "podzol",
+    "moss_block",
+    "dirt_with_roots"
+  ],
+  "placementTallBlock": [
+    "grass",
+    "dirt",
+    "podzol",
+    "moss_block",
+    "dirt_with_roots",
+    "ff:foxglove_tall"
+  ],
+  "placementTall": [
+    "grass",
+    "dirt",
+    "podzol",
+    "moss_block",
+    "dirt_with_roots"
+  ]
+}

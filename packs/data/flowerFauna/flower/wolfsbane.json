@@ -1,0 +1,42 @@
+{
+  "identifier": "wolfsbane",
+  "dye": 14,
+  "tier": 3,
+  "langName": "Wolfsbane",
+  "bouquet": true,
+  "extraTall": true,
+  "geometryNormal": "geometry.cross",
+  "geometryTall": "geometry.double_cross",
+  "geometryLarge": "geometry.triple_cross",
+  "geometryBouquet": "geometry.large_fern",
+  "ambientOcclusion": false,
+  "faceDimming": false,
+  "entityCollision": false,
+  "pickCollision": {
+    "origin": [-3.5, 0, -3.5],
+    "size": [7, 10, 7]
+  },
+  "itemTextureNormal": false,
+  "placement": [
+    "grass",
+    "dirt",
+    "podzol",
+    "moss_block",
+    "dirt_with_roots"
+  ],
+  "placementTallBlock": [
+    "grass",
+    "dirt",
+    "podzol",
+    "moss_block",
+    "dirt_with_roots",
+    "ff:wolfsbane_tall"
+  ],
+  "placementTall": [
+    "grass",
+    "dirt",
+    "podzol",
+    "moss_block",
+    "dirt_with_roots"
+  ]
+}
