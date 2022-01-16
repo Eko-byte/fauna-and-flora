@@ -9,6 +9,6 @@
 		"feature_to_snap": "ff:drip_flower/drip_flower_feature",
 
 		"surface": "floor",
-		"vertical_search_range": 24
+		"vertical_search_range": 300
 	}
 }

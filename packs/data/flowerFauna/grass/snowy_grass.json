@@ -37,7 +37,8 @@
     "dirt",
     "podzol",
     "moss_block",
-    "dirt_with_roots"
+    "dirt_with_roots",
+    "ff:sleeted_grass_block"
   ],
   "placementTallBlock": [
     "grass",
@@ -45,13 +46,15 @@
     "podzol",
     "moss_block",
     "dirt_with_roots",
-    "ff:snowy_grass_tall"
+    "ff:snowy_grass_tall",
+    "ff:sleeted_grass_block"
   ],
   "placementTall": [
     "grass",
     "dirt",
     "podzol",
     "moss_block",
-    "dirt_with_roots"
+    "dirt_with_roots",
+    "ff:sleeted_grass_block"
   ]
 }

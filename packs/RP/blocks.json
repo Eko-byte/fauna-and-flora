@@ -646,5 +646,8 @@
   },
   "ff:dead_bush_tall": {
     "sound": "grass"
+  },
+  "ff:sleeted_grass_block": {
+    "sound": "snow"
   }
 }

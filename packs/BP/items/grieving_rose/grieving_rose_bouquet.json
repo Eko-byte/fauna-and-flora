@@ -13,7 +13,13 @@
           "dirt",
           "podzol",
           "moss_block",
-          "dirt_with_roots"
+          "dirt_with_roots",
+          "crimson_nylium",
+          "warped_nylium",
+          "netherrack",
+          "soul_sand",
+          "soul_soil",
+          "magma"
         ]
       },
       "minecraft:icon": {

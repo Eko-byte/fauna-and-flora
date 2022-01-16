@@ -48,9 +48,15 @@
               "minecraft:grass",
               "minecraft:dirt",
               "minecraft:podzol",
-              "minecraft:dirt_with_roots",
               "ff:corrupted_rose_tall",
-              "moss_block"
+              "moss_block",
+              "dirt_with_roots",
+              "crimson_nylium",
+              "warped_nylium",
+              "netherrack",
+              "soul_sand",
+              "soul_soil",
+              "magma"
             ]
           }
         ]

@@ -15,8 +15,14 @@
               "minecraft:grass",
               "minecraft:dirt",
               "minecraft:podzol",
-              "minecraft:dirt_with_roots",
-              "minecraft:moss_block"
+              "minecraft:moss_block",
+              "dirt_with_roots",
+              "crimson_nylium",
+              "warped_nylium",
+              "netherrack",
+              "soul_sand",
+              "soul_soil",
+              "magma"
             ]
           }
         ]

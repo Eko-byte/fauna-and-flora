@@ -4,6 +4,10 @@
     "description": { "identifier": "ff:white_rose/white_rose_feature" },
     "places_block": { "name": "ff:white_rose" },
     "enforce_survivability_rules": true,
-    "enforce_placement_rules": true
+    "enforce_placement_rules": true,
+    "may_replace": [
+      "minecraft:air",
+      "minecraft:red_flower"
+    ]
   }
 }

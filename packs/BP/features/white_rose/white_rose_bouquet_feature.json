@@ -8,6 +8,10 @@
       "name": "ff:white_rose_bouquet"
     },
     "enforce_survivability_rules": true,
-    "enforce_placement_rules": true
+    "enforce_placement_rules": true,
+    "may_replace": [
+      "minecraft:air",
+      "minecraft:red_flower"
+    ]
   }
 }

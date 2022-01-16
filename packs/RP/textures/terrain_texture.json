@@ -649,6 +649,12 @@
     },
     "dead_bush_tall": {
       "textures": "textures/blocks/dead_bush/dead_bush_tall"
+    },
+    "sleeted_grass_block": {
+      "textures": "textures/blocks/sleeted_grass_block"
+    },
+    "sleeted_grass_block_side": {
+      "textures": "textures/blocks/sleeted_grass_block_side"
     }
   }
 }
